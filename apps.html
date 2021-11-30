@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141293639-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141293639-1');
+</script>
+  <title>YASUHERE and R</title>
+
+<meta name="keyword" content="CRAN R, R, MRAN, Psychology Experiment, Psychology, Experiment, statistics, regression, stats, analysis, analyses, javascript, js, yasuhere">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <script  type="text/javascript">
+    function changeImg(imgNumber) {
+      var myImages = ["background/background1.jpg", "background/background2.jpg", "background/background3.jpg"]; 
+      var imgShown = document.body.style.backgroundImage;
+      var newImgNumber =Math.floor(Math.random()*myImages.length);
+      document.body.style.backgroundImage = 'url('+myImages[newImgNumber]+')';
+    }
+    window.onload=changeImg;
+  </script>
+
+  <style type="text/css">
+    .bg {background-attachment: fixed; background-position: center; background-repeat: no-repeat;  background-size: cover;
+    }
+div{font-family:Verdana;}
+
+/* for menu bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family:Verdana;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #800000;
+}
+
+/* end menu bar */
+
+body {
+  margin: 0; /* this removes margins around the main body */
+  font-family: Verdana;
+}
+
+  </style>
+
+</head>
+
+<body class="bg">
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="r.html">R</a></li>
+  <li><a class="active" href="#apps">Apps</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+
+<div style="background-color:white;opacity: .7;padding:.1px 12px;font-family:Verdana;" style="opacity: .7">
+  <h1 style="text-align: center;font-family:Verdana;">YASUHERE in Oregon</h1>
+
+
+  <h2>Cognitive Experiment Apps in js</h2>
+  <p>Experiments were built using jsPsych library. These experiments run natively on the web broweser with no noticable latency issue with media preloading.</p>
+    <a href = "dwell-time.html" target="_blank"> Dwell-time task</a>
+      <br>
+    <h4>Samples provided by jsPsych</h4>
+    <a href = "jspsych-6/examples/demo-flanker.html" target="_blank"> Demo: Flanker</a>
+    <br>
+    <a href = "jspsych-6/examples/demo-simple-rt-task.html" target="_blank">Demo: Simple RT Task</a>
+    <br>
+      <p style="font-size:85%;">Note: Experiments will open in a new tab.</p>
+  </ul>
+
+</div>
+
+
+</body>
+</html>

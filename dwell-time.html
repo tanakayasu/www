@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141293639-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'UA-141293639-1');
+            </script>
+
+            <title>Dwell-time experiment</title>
+
+
+<meta name="keyword" content="CRAN R, R, MRAN, Psychology Experiment, Psychology, Experiment, statistics, regression, stats, analysis, analyses, javascript, js, yasuhere">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+            <script src="jspsych-6/jspsych.js"></script>
+            <script src="jspsych-6/plugins/jspsych-html-keyboard-response.js"></script>
+            <script src="jspsych-6/plugins/jspsych-image-keyboard-response.js"></script>
+            <link  href="jspsych-6/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+        </head>
+        <body></body>
+    <script>
+        /* create array timeline */
+        var timeline = [];
+        
+        /* create welcome message */
+        var welcome = {
+            type: "html-keyboard-response",
+            stimulus: "<p>Welcome to the experiment. Press the spacebar to begin.</> <p> Please note, you <b>must</b> have a <b>keyboard</b> for this experiment.</p>",
+            choices: ['spacebar']
+        };
+        timeline.push(welcome);
+        
+        /* create instruction message */
+        var instructions = {
+            type: "html-keyboard-response",
+            stimulus: "<p>You will click through slideshows at your own pace using the spacebar.</p>" +
+            "<p>Press the spacebar to begin.",
+            choices: ['spacebar'],
+            post_trial_gap: 500
+        };
+        timeline.push(instructions);
+        
+        /* test trial */
+var test_stimuli_bm1 = [
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24001.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24002.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24003.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24004.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24005.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24006.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24007.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24008.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24009.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24010.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24011.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24012.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24013.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24014.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24015.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24016.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24017.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24018.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24019.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24020.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24021.jpg", data: {video: 'bm1', sportType: 'basketball'}},
+  {stimulus: "imageEyedwell/bm1/BasketballM1_24022.jpg", data: {video: 'bm1', sportType: 'basketball'}}
+  ]
+
+        var test_stimuli_wf2 = [
+            {stimulus: "imageEyedwell/wf2/WeightF2_24001.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24002.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24003.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24004.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24005.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24006.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24007.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24008.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24009.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24010.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24011.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24012.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24013.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24014.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24015.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24016.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24017.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24018.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24019.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24020.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24021.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24022.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24023.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24024.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24025.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24026.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24027.jpg"},
+            {stimulus: "imageEyedwell/wf2/WeightF2_24028.jpg"}
+        ];
+       
+var test_stimuli = [
+{stimulus: "sample_image/sample video 02.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 03.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 04.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 05.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 06.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 07.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 08.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 09.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 10.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 11.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 12.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 13.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 14.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 15.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 16.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 17.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 18.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 19.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 20.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 21.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 22.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 23.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 24.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 25.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 26.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 27.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 28.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 29.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 30.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 31.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 32.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 33.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 34.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 35.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 36.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}},
+{stimulus: "sample_image/sample video 37.jpg", data: {videoName: 'sampleVideo1', videoType: "lake"}}
+];
+        /* preload images manually 
+        var images = ["sample_image/sample video 02.jpg",
+                      "sample_image/sample video 03.jpg",
+                      "sample_image/sample video 04.jpg",
+                      "sample_image/sample video 05.jpg",
+                      "sample_image/sample video 06.jpg",
+                      "sample_image/sample video 07.jpg",
+                      "sample_image/sample video 08.jpg",
+                      "sample_image/sample video 09.jpg",
+                      "sample_image/sample video 10.jpg",
+                      "sample_image/sample video 11.jpg",
+                      "sample_image/sample video 12.jpg",
+                      "sample_image/sample video 13.jpg",
+                      "sample_image/sample video 14.jpg",
+                      "sample_image/sample video 15.jpg",
+                      "sample_image/sample video 16.jpg",
+                      "sample_image/sample video 17.jpg",
+                      "sample_image/sample video 18.jpg",
+                      "sample_image/sample video 19.jpg",
+                      "sample_image/sample video 20.jpg",
+                      "sample_image/sample video 21.jpg",
+                      "sample_image/sample video 22.jpg",
+                      "sample_image/sample video 23.jpg",
+                      "sample_image/sample video 24.jpg",
+                      "sample_image/sample video 25.jpg",
+                      "sample_image/sample video 26.jpg",
+                      "sample_image/sample video 27.jpg",
+                      "sample_image/sample video 28.jpg",
+                      "sample_image/sample video 29.jpg",
+                      "sample_image/sample video 30.jpg",
+                      "sample_image/sample video 31.jpg",
+                      "sample_image/sample video 32.jpg",
+                      "sample_image/sample video 33.jpg",
+                      "sample_image/sample video 34.jpg",
+                      "sample_image/sample video 35.jpg",
+                      "sample_image/sample video 36.jpg",
+                      "sample_image/sample video 37.jpg"]
+        */
+        
+        /* create list of images to preload. same as above but much less code
+        https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
+        */
+        
+        var images = test_stimuli.map(test_stimuli => test_stimuli.stimulus);
+
+        
+        var test = {
+            type: "image-keyboard-response",
+            stimulus: jsPsych.timelineVariable('stimulus'),
+            choices: ['spacebar'],
+            data: jsPsych.timelineVariable('data')
+        };
+        
+        var fixation = {
+            type: 'html-keyboard-response',
+            stimulus: '<div style="font-size:60px;">+</div>',
+            choices: jsPsych.NO_KEYS,
+            trial_duration: function(){
+                return jsPsych.randomization.sampleWithoutReplacement([250, 500, 750, 1000, 1250, 1500, 1750, 2000], 1)[0];
+            },
+            data: {test_part: 'fixation'}
+        };
+        
+        var test_procedure = {
+            timeline: [test],
+            timeline_variables: test_stimuli,
+            randomization_order: true,
+            repetition: 1
+
+        };
+
+        timeline.push(test_procedure);
+        
+        /* thank you screen */
+        var thankyou = {
+            type: "html-keyboard-response",
+            stimulus: "<p>Thank you for participating!</p> <p>You will see the raw result in csv format</p>",
+
+        };
+        timeline.push(thankyou);
+        
+        
+        /* start the experiment */
+        jsPsych.init({
+            timeline: timeline,
+            preload_images: images,
+            on_finish: function(){
+                jsPsych.data.displayData('csv');
+            },
+        });
+    </script>
+    </html>
+    

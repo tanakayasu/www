@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141293639-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141293639-1');
+</script>
+
+	<title>YASUHERE and R</title>
+
+<meta name="keyword" content="CRAN R, R, MRAN, Psychology Experiment, Psychology, Experiment, statistics, regression, stats, analysis, analyses, javascript, js, yasuhere">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <script  type="text/javascript">
+    function changeImg(imgNumber) {
+      var myImages = ["background/background1.jpg", "background/background2.jpg", "background/background3.jpg"]; 
+      var imgShown = document.body.style.backgroundImage;
+      var newImgNumber =Math.floor(Math.random()*myImages.length);
+      document.body.style.backgroundImage = 'url('+myImages[newImgNumber]+')';
+    }
+    window.onload=changeImg;
+  </script>
+
+  <style type="text/css">
+    .bg {background-attachment: fixed; background-position: center; background-repeat: no-repeat;  background-size: cover;
+    }
+
+div{font-family:Verdana;}
+
+/* for menu bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family:Verdana;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #800000;
+}
+
+/* end menu bar */
+
+body {
+  margin: 0; /* this removes margins around the main body */
+  font-family: Verdana;
+}
+
+  </style>
+
+</head>
+<body class="bg">
+
+<ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a class="active" href="#r.html">R</a></li>
+	<li><a href="apps.html">Apps</a></li>
+	<li><a href="about.html">About</a></li>
+	<li><a href="contact.html">Contact</a></li>
+</ul>
+
+
+<div style="background-color:white;opacity: .7;padding:.1px 12px;font-family:Verdana;" style="opacity: .7">
+  <h1 style="text-align: center;">YASUHERE in Oregon</h1>
+
+  <h2>R Data Science</h2>
+  <h3>Introduction</h3>
+  <p>Ever since I was tasked to analyze multi-year All Payers All Claims dataset with (very) limited computational resources I had at the time, I started using 'data.table' and 'sqldf' as my primary mode of processing data. 'data.table' is  much more efficient at processing data compared to similar code written in base R. 'sqldf' is very useful to manage dataset using popular sql syntax. Another advantage of using sqldf is that if your organization has a data warehouse, it is possible to access it with your credential directly in R hence making it easier to streamline your workflow.</p>
+
+  <p>I will be posting some examples from my own work as well as link to some of the materials that I find useful when working in R.</p>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+.card {
+   background-color: #c6c6c6;
+   padding: 20px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   font-family:Verdana;
+}
+</style> 
+
+
+<body>
+    <div class="card">
+      <a href="R example/column name in a variable.html" target="_blank">
+        <h3>Pass column names stored in a variable with data frame and data.table</h3>
+</a>
+        <h4>R tutorial, Saturday December 7th, 2019</h4>
+<p>
+  I will go over how to pass column name(s) stored in a variable to select columns and create count tables using data frame and data table.
+</p>
+
+</div>
+</body>
+
+
+<body>
+    <div class="card">
+      <a href="Eyeball/eyeballVideoTimeline2019/videoTimeline.html" target="_blank">
+        <h3>Eyeball boundary timeline plot is finally here!</h3>
+</a>
+        <h4>Eyeball update, October 3rd, 2019</h4>
+<p>
+  This post will show step-by-step process of how I created a timeline plot using ggplot2 and data.table packages. The purpose of this plot was to identify overlapping boundary regions between each videos.
+</p>
+<a href="Eyeball/eyeballVideoTimeline2019/eyeball timeline by boundary.pdf" target="_blank">
+        <h5>Plot 1: Eyeball timeline by boundary</h5>
+  </a>
+<a href="Eyeball/eyeballVideoTimeline2019/eyeball timeline by video length.pdf" target="_blank">
+        <h5>Plot 2: Eyeball  timeline by video length</h5>
+  </a>
+</div>
+</body>
+
+<body>
+    <div class="card">
+      <a href="R example/acs_pums_part_1.html" target="_blank">
+        <h3>Analyze US Census Data Part 1: Download American Community Survey (ACS)
+          Public Use Microdata Sample (PUMS)
+        </h3>
+</a>
+        <h4>ACS PUMS data analysis, Friday June 14th, 2019</h4>
+<p>
+This short post will go over how to download ACS PUMS data for Oregon (OR) all from within RStudio. This post will also be using data.table package (amongst others) so if you're new to data.table and would like to see its usage and benefits over data frame at the basic level, this post is for you!
+</p>
+</body>
+</div>
+
+<body>
+    <div class="card">
+      <a href="R example/acs_pums_part_1.html" target="_blank">
+<h3>Personal favorites</h3>
+<p>
+<a href="https://stackoverflow.com/questions/23926334/how-do-i-parallelize-in-r-on-windows-example">Parallel processing on Windows</a>
+<a href="https://r4ds.had.co.nz" target="_blank">Great place to get started with data science in R</a>
+<br>
+<a href="https://s3.amazonaws.com/assets.datacamp.com/blog_assets/datatable_Cheat_Sheet_R.pdf" target="_blank">data.table cheatsheet</a>
+<br>
+<a href="https://www.rstudio.com/products/rstudio/download/" target="_blank">RStudio is an IDE for R</a>
+<a href="https://cran.r-project.org" target="_blank">A link to download R</a>
+</p>
+
+</body>
+</div>
+
+</div>
+
+
+</body>
+</html>

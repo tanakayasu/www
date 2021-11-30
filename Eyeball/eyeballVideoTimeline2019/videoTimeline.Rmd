@@ -1,0 +1,94 @@
+---
+title: "Eyeball Boundary Timeline"
+output:
+  html_document:
+    df_print: paged
+---
+
+Install and/or Load libraries
+```{r, message=F}
+if(!require(tidyverse)) install.packages("tidyverse") else require(tidyverse)
+```
+
+Create data table with video names, length of video, and range that the coarse boundaries occur.
+```{r, message=F}
+source("C://Users//Pro//Documents//MEGA//eyeball analysis F2017//eyeball analysis 2017//libLoad.R")
+boundaryMap <- "VIDEO_NAME	videoStart	region.start	region.end	videoEnd
+BasketballF1	0	164	209	376
+BasketballF2	0	166	211	261
+BasketballM1	0	52	97	162
+BasketballM2	0	186	231	237
+TennisF1    	0	218	263	262
+TennisF2    	0	272	317	317
+TennisM1	    0	220	265	331
+TennisM2	    0	170	215	236
+WeightF1    	0	225	270	372
+WeightF2    	0	84	129	203
+WeightM1    	0	147	192	268
+WeightM2    	0	187	232	255" %>% fread
+```
+
+Print data table to check if it loaded correctly.
+```{r, message=F}
+boundaryMap %>% print
+```
+
+Reshape the data table from wide to long using data table. There's probably a way to do this without writing the same script twice...?
+```{r, message=F}
+boundaryMaplong <- melt(boundaryMap, id.vars= c("VIDEO_NAME", "region.start", "region.end"),
+                        measure.vars = c("videoStart", "videoEnd"))
+boundaryMaplong %>% setnames(c("variable", "value"), c("startEnd", "videoFrame"))
+
+boundaryMaplong <- melt(data = boundaryMaplong, id.vars = c("VIDEO_NAME", "startEnd", "videoFrame"),
+                        measures.vars = c("region.start", "region.end"))
+boundaryMaplong %>% setnames(c("variable", "value"), c("boundaryStartEnd", "boundaryFrame"))
+```
+
+Print data table to check if it loaded correctly.
+```{r, message=F}
+boundaryMaplong %>% print
+```
+
+Sort by boundary time of boundary region
+```{r, message=F}
+ggplot() +
+  geom_line(data = boundaryMaplong,
+            aes(videoFrame, reorder(VIDEO_NAME, -boundaryFrame))) +
+  geom_point(data = boundaryMaplong,
+             aes(videoFrame, reorder(VIDEO_NAME, -boundaryFrame)),
+             size = 3, shape="square") +
+  
+  geom_line(data = boundaryMaplong,
+            aes(boundaryFrame, VIDEO_NAME, colour = VIDEO_NAME), size = 2) +
+  geom_point(data = boundaryMaplong,
+             aes(boundaryFrame, VIDEO_NAME, colour = VIDEO_NAME), size = 3) +
+  theme(legend.position="none",
+        axis.title.y = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust=1)) +
+  labs(x="Video Frame",
+       title = "Length of video and time of boundary for each Video") +
+  scale_x_continuous(limits = c(0, 400),
+                     breaks = seq(from=0, to=400, by = 15))
+```
+
+Sort by video length
+```{r, message=F}
+ggplot() +
+  geom_line(data = boundaryMaplong,
+            aes(videoFrame, reorder(VIDEO_NAME, -videoFrame))) +
+  geom_point(data = boundaryMaplong,
+             aes(videoFrame, reorder(VIDEO_NAME, -videoFrame)),
+             size = 3, shape="square") +
+  
+  geom_line(data = boundaryMaplong,
+            aes(boundaryFrame, VIDEO_NAME, colour = VIDEO_NAME), size = 2) +
+  geom_point(data = boundaryMaplong,
+             aes(boundaryFrame, VIDEO_NAME, colour = VIDEO_NAME), size = 3) +
+  theme(legend.position="none",
+        axis.title.y = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust=1)) +
+  labs(x="Video Frame",
+       title = "Length of video and time of boundary for each Video") +
+  scale_x_continuous(limits = c(0, 400),
+                     breaks = seq(from=0, to=400, by = 15))
+```
